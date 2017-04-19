@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>lazyload方法</title>
+  <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+  <style type="text/css">
+    .demo-chat{width: 50%;margin: 0 auto;}
+    img{ width:100%; }
+  </style>
+
+</head>
+<body>
+  <div class="">
+    <img src="images/guaguale.png" data-original="images/505d95e6188e711a53509314044a7e33ca245788178040-rtsMV0_fw658.jpg" class="lazy" />
+    <img src="images/guaguale.png" data-original="images/505d95e6188e711a53509314044a7e33ca245788178040-rtsMV0_fw658.jpg" class="lazy" />
+    <img src="images/guaguale.png" data-original="images/505d95e6188e711a53509314044a7e33ca245788178040-rtsMV0_fw658.jpg" class="lazy" />
+    <img src="images/guaguale.png" data-original="images/505d95e6188e711a53509314044a7e33ca245788178040-rtsMV0_fw658.jpg" class="lazy" />
+    <img src="images/guaguale.png" data-original="images/505d95e6188e711a53509314044a7e33ca245788178040-rtsMV0_fw658.jpg" class="lazy" />
+    <img src="images/guaguale.png" data-original="images/505d95e6188e711a53509314044a7e33ca245788178040-rtsMV0_fw658.jpg" class="lazy" />      
+    <img src="images/guaguale.png" data-original="images/505d95e6188e711a53509314044a7e33ca245788178040-rtsMV0_fw658.jpg" class="lazy" />
+    <img src="images/guaguale.png" data-original="images/505d95e6188e711a53509314044a7e33ca245788178040-rtsMV0_fw658.jpg" class="lazy" />
+    <img src="images/guaguale.png" data-original="images/505d95e6188e711a53509314044a7e33ca245788178040-rtsMV0_fw658.jpg" class="lazy" />
+    <img src="images/guaguale.png" data-original="images/505d95e6188e711a53509314044a7e33ca245788178040-rtsMV0_fw658.jpg" class="lazy" />
+    
+  </div>
+
+
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/jquery.lazyload.min.js"></script>
+  <script type="text/javascript">
+
+    $(function() {
+      $("img.lazy").lazyload({effect: "fadeIn",threshold :1000,});
+    });
+
+
+  </script>
+</body>
+</html>

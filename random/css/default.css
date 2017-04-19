@@ -1,0 +1,33 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Cedarville+Cursive);
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+h4{
+  color: #ea4111;
+}
+h1,h4,#get{
+  font-family: 'Open Sans', sans-serif;
+}
+h1{
+  color:#d90606;
+}
+#get {
+    font-size: 0.8em;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    color:#8ae4f7;
+    border: solid 1px #ea4111;
+    outline: none;
+}
+
+#get:hover {
+    color: #fff;
+    background-color: #ea4111;
+}
+.quote-box{
+  width:400px;
+  height:300px;
+  border-radius: 10px;
+  margin:30px auto auto auto;
+  background-color:#8ae4f7;
+}

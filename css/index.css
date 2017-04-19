@@ -1,0 +1,202 @@
+body,html{
+	padding:0;
+	margin:0;
+	width:100%;
+	height:100%;
+    background-color:#efefef;
+}
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+    <style type="text/css">
+
+
+body:before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:auto;
+    height:100vh;
+    background:#fff;
+    z-index:999;
+    animation-name:bg;
+    animation-duration:2s;
+    animation-timing-function:ease;
+    animation-iteration-count:1;
+    animation-fill-mode:forwards;
+}
+@keyframes bg{
+    0%{
+        height:100vh;
+    }
+    80%{
+        height:100vh;
+    }
+    100%{
+        height:0vh;
+        display:none;
+    }
+}
+/*这是前面的动画效果*/
+body:after{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    right:auto;
+    bottom:auto;
+    height:1vh;
+    background:#6cf;
+    z-index:1000;
+    animation-name:animate;
+    animation-duration:1.6s;
+    animation-timing-function:ease;
+    animation-iteration-count:1;
+    animation-fill-mode:forwards;
+}
+@keyframes animate{
+    0%{
+      width:0vw;
+    }
+    50%{
+      width:50vw;
+    }
+    80%{
+      width:50vw;
+    }
+    95%{
+      width:100vw;
+      height:1vh;
+    }
+    100%{
+      width:100vw;
+      height:0vh;
+    }
+}
+    </style>
+footer, header {
+    flex-shrink: 0;
+}
+main {
+    flex-grow: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transform: translate3d(0,0,0);
+}
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+    display: block;
+}
+img {
+    border: 0;
+    max-width: 100%;
+    vertical-align: middle;
+}
+.flex-row>* {
+    flex-shrink: 0;
+    flex-grow: 1;
+}
+.flex-row {
+    display: flex;
+}
+.main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+.listbox{
+	width: 100%;
+	height: 100%;
+}
+.listbox ul,li{
+	padding:0;
+	margin:0;
+	list-style: none;
+}
+
+
+.list, .nav {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.list-item{
+	justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin: 10px 0;
+    position: relative;
+    display: flex;
+}
+
+
+.listbox .list-item:before {
+    content: "";
+    padding-top: 44%;
+}
+.list-img{
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-shrink: 0;
+}
+.list-img img {
+    width: 100%;
+    height: 100%;
+    background: #efefef;
+}
+.list-content {
+    position: relative;
+    min-height: 30px;
+    line-height: 1;
+    flex-grow: 1;
+    display: flex;
+    margin: .5rem 1.5em;
+}
+.list-content {
+    width: 12em;
+    flex-grow: 0;
+    text-align: center;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.listbox .word {
+    width: 100%;
+    padding: .5em 1em;
+}
+
+.list-content .word {
+    padding: .5em 0;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    background-color: rgba(255, 143, 143, 0.6);
+}
+.list-item .title {
+    font-size: 1.6rem;
+    flex-grow: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.list-item .other {
+    margin-top: .5rem;
+}
+
+.listbox .list-content a {
+    color: #fff;
+    text-decoration: none;
+}

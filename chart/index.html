@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chart.js 图标插件应用</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<style type="text/css">
+		.demo-chat{width: 50%;margin: 0 auto;}
+	</style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+
+<canvas id="canvasLine" height="450" width="600"></canvas>
+<canvas id="canvasBar" height="450" width="600"></canvas>	
+<canvas id="canvasRadar" height="450" width="600"></canvas>
+<canvas id="canvasPolarArea" height="450" width="600"></canvas>
+<canvas id="canvasPie" height="450" width="600"></canvas>
+<canvas id="canvasDoughnut" height="450" width="600"></canvas>
+	<script src="js/Chart.js"></script>
+	<script>
+	var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+	//曲线图 柱状图 雷达图或蜘蛛网图，
+	var data1 = {
+	labels : ["January","February","March","April","May","June","July"],
+	datasets : [
+		{
+			fillColor : "rgba(220,220,220,0.5)",
+			strokeColor : "rgba(220,220,220,1)",
+			pointColor : "rgba(220,220,220,1)",
+			pointStrokeColor : "#fff",
+			data : [65,59,90,81,56,55,40]
+		},
+		{
+			fillColor : "rgba(151,187,205,0.5)",
+			strokeColor : "rgba(151,187,205,1)",
+			pointColor : "rgba(151,187,205,1)",
+			pointStrokeColor : "#fff",
+			data : [28,48,40,19,96,27,100]
+		}
+	]
+}
+//极地区域图 饼图 环形图
+var data = [
+	{
+		value : 30,
+		color: "#D97041"
+	},
+	{
+		value : 90,
+		color: "#C7604C"
+	},
+	{
+		value : 24,
+		color: "#21323D"
+	},
+	{
+		value : 58,
+		color: "#9D9B7F"
+	},
+	{
+		value : 82,
+		color: "#7D4F6D"
+	},
+	{
+		value : 8,
+		color: "#584A5E"
+	}
+]
+	window.onload = function(){
+		var line = document.getElementById("canvasLine").getContext("2d");
+		var bar =document.getElementById("canvasBar").getContext("2d");
+		var radar =document.getElementById("canvasRadar").getContext("2d");
+		var polararea =document.getElementById("canvasPolarArea").getContext("2d");
+		var pie =document.getElementById("canvasPie").getContext("2d");
+		var doughnut =document.getElementById("canvasDoughnut").getContext("2d");
+		//曲线
+		//window.myBar = new Chart(ctx).Line(data, {
+		//柱状图
+		//window.myBar = new Chart(ctx).Bar(data, {
+		//雷达图或蜘蛛网
+		//window.myBar = new Chart(ctx).Radar(data, {
+		//极地区域图
+		//window.myBar = new Chart(ctx).PolarArea(data, {
+		//饼图
+		//window.myBar = new Chart(ctx).Pie(data, {
+		//环形图
+		//window.myBar = new Chart(ctx).Doughnut(data, {
+		window.myBar = new Chart(line).Line(data1, {
+			responsive : true
+		});
+		window.myLine=new Chart(bar).Bar(data1,{
+			responsive:true
+		});		
+		window.myBar = new Chart(radar).Radar(data1, {
+			responsive : true
+		});
+		window.myLine=new Chart(polararea).PolarArea(data,{
+			responsive:true
+		});		
+		window.myBar = new Chart(pie).Pie(data, {
+			responsive : true
+		});
+		window.myLine=new Chart(doughnut).Doughnut(data,{
+			responsive:true
+		});
+	}
+	</script>
+
+</body>
+</html>

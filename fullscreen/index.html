@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>首页</title>
+<style>
+body {
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+}
+.video-box, .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.video-box {
+    top: 3em;
+    bottom: 3em;
+    border: 1px solid;
+    display: none;
+    z-index: -1;
+}
+.video-box.on {
+    z-index: 0;
+    display: block;
+}
+.video {
+    display: block;
+}
+</style>
+</head>
+
+<body>
+<div class="cover">点击播放</div>
+<div class="video-box">
+    <video id="example_video_1" src="index2.mp4" class="video" width="100%" height="100%" preload x5-video-player-type="h5" x5-video-player-fullscreen="true" webkit-playsinline="true" playsinline="true"></video>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/prefixfree/1.0.7/prefixfree.min.js"></script>
+<script>
+var myPlayer = $('#example_video_1')[0];
+function PLAY() {
+    myPlayer.play();
+    $(myPlayer).on("ended", END);
+}
+function END() {
+    $('.cover').text('播放结束');
+    $('.video-box').removeClass('on');
+}
+
+$('.cover').on('click', function(){
+    $('.cover').text('放视频咯');
+    $('.video-box').addClass('on'); PLAY();
+});
+</script>
+</body>
+</html>
