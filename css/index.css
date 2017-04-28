@@ -10,9 +10,14 @@ header {
     align-items: center;
     flex-direction: column;
 }
-    <style type="text/css">
 
 
+@media (min-width: 76rem) and (orientation: landscape) {
+
+.main {
+    max-width: 48rem;
+}
+}
 body:before{
     content:"";
     position:fixed;
