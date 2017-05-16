@@ -1,0 +1,290 @@
+﻿<!doctype html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仿qq聊天贴纸</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <style type="text/css">
+        body,html{overflow:hidden;}
+        .footer {
+            background-color: white;
+            padding: 5px 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .qqchatlist {
+            height: 580px;
+        }
+
+        .qqchatitem_left {
+            display: flex;
+            padding: .5rem 0 0 .5rem;
+        }
+
+            .qqchatitem_left .qqchatitem_img {
+                width: 3rem;
+                border-radius: 100px;
+            }
+
+            .qqchatitem_left .qqchatitem_word {
+                padding: 0 0 0 1.5rem;
+            }
+
+            .qqchatitem_left .qqchatitem_content {
+                padding: 1px 8px 1px 8px;
+                border-radius: 10px;
+                background-color: white;
+            }
+
+        .qqchatitem_right {
+            padding: .5rem .5rem 0 0;
+            width: 98%;
+            /* display: block; */
+            float: left;
+        }
+
+            .qqchatitem_right .qqchatitem_img {
+                width: 3rem;
+                border-radius: 100px;
+                float: right;
+            }
+
+            .qqchatitem_right .qqchatitem_word {
+                padding: 0 1.5rem 0 0;
+                float: right;
+            }
+
+            .qqchatitem_right .qqchatitem_content {
+                padding: 1px 8px 1px 8px;
+                border-radius: 10px;
+                background-color: white;
+            }
+
+        input {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            display: table-cell;
+            position: relative;
+            z-index: 2;
+            float: left;
+            width: 100%;
+            margin-bottom: 0;
+            display: block;
+            width: 100%;
+            height: 34px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        }
+
+        button {
+            margin-top: 2px;
+            margin-bottom: 5px;
+            color: #333;
+            background-color: #fff;
+            border-color: #ccc;
+            display: inline-block;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        /*输入框*/
+        .input_box {
+            flex-basis: 60%;
+        }
+
+        .btn {
+            background-color: #12b7f5;
+            color: white;
+        }
+
+        .expression {
+            height: 120px;
+            overflow-y: auto;
+            border: 1px solid #d2d2d2;
+            background-color: white;
+        }
+
+        .expression_list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .expression_item {
+            flex-basis: 18%;
+            padding: 5px 0 5px 5px;
+            flex-shrink: 0;
+        }
+        .expression_img {
+        width:80px;
+        position:absolute;
+       
+        }
+        #qqchatlist {
+    position: absolute;
+    z-index: 111;
+    height: 580px;
+    width: 100%;
+    top: 0;
+        }
+    </style>
+
+
+</head>
+
+
+
+<body>
+
+    <div class="main">
+        <header></header>
+        <main>
+            <!-- 聊天对话框 -->
+            <div class="qqchatlist">
+                <div class="qqchatitem_left">
+                    <!-- 头像 -->
+                    <div class="qqchatitem_img"> <img src="img/headimg.png"></div>
+
+                    <!-- 聊天内容 -->
+                    <div class="qqchatitem_word">
+                        <div class="qqchatitem_content">
+                            <p>聊天聊天</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="qqchatitem_right">
+                    <!-- 头像 -->
+                    <div class="qqchatitem_img"> <img src="img/headimg.png"></div>
+
+                    <!-- 聊天内容 -->
+                    <div class="qqchatitem_word">
+                        <div class="qqchatitem_content">
+                            <p>聊天聊天</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="qqchatitem_right">
+                    <!-- 头像 -->
+                    <div class="qqchatitem_img"> <img src="img/headimg.png"></div>
+
+                    <!-- 聊天内容 -->
+                    <div class="qqchatitem_word">
+                        <div class="qqchatitem_content">
+                            <p>聊天聊天</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div  id="qqchatlist" ondrop="drop(event)" ondragover="allowDrop(event)">
+</div>
+            <!-- 选择图片 -->
+        </main>
+        <footer>
+            <!-- 表情库 -->
+            <div class="expression">
+                <div class="expression_list">
+                    <div class="expression_item">
+                        <img draggable="true" id="dragImg0" ondragstart="drag(event)" class="expression_img" src="img/1.png" />
+                    </div>
+                    <div class="expression_item">
+                        <img draggable="true" id="dragImg1" ondragstart="drag(event)" class="expression_img" src="img/2.jpg" />
+                    </div>
+                    <div class="expression_item">
+                        <img draggable="true" id="dragImg2" ondragstart="drag(event)" class="expression_img" src="img/3.jpg" />
+                    </div>
+                    <div class="expression_item">
+                        <img draggable="true" id="dragImg3" ondragstart="drag(event)" class="expression_img" src="img/4.jpeg" />
+                    </div>
+                    <div class="expression_item">
+                        <img draggable="true" id="dragImg4" ondragstart="drag(event)" class="expression_img" src="img/5.jpg" />
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <!-- 发送图片 -->
+                <div class="">
+                    <button class="btn pic">图片 </button>
+                </div>
+                <!-- 输入框 -->
+                <div class="input_box">
+                    <input type="text">
+                </div>
+                <!-- 发送按钮 -->
+                <div class="">
+                    <button class="btn sent">发送</button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../js/jquery.min.js"></script>
+
+
+
+
+
+    <script type="text/javascript">
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            console.log("drag" + ev);
+            ev.dataTransfer.effectAllowed = "copy";
+            ev.dataTransfer.setData("Text", ev.target.id);
+        }
+
+        function drop(ev) {
+            console.log(ev)
+            ev.preventDefault();
+            ev.dataTransfer.dropEffect = 'copy';
+            var data = ev.dataTransfer.getData("Text");
+            $("#" + data + "").css("top", ev.clientY).css("left", ev.clientX)
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+
+
+
+    <script type="text/javascript">
+
+    </script>
+
+</body>
+
+</html>
