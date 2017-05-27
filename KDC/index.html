@@ -1,0 +1,302 @@
+﻿<!doctype html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucrezia的案例</title>
+
+</head>
+
+<style type="text/css">
+    html, body, #container {
+    height: 100%;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+    .article-entry img, .article-entry video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+    .article-byline {
+        display: none !important;
+    }
+    ::selection {
+    color: #fff;
+    background: #fa862e;
+}
+.article-entry:before, .article-entry:after {
+    content: "";
+    display: table;
+}
+.article-entry:after {
+    clear: both;
+}
+.article-entry p, .article-entry table {
+    margin: 1.6em 0;
+}
+    .article-entry {
+    color: #555;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6em;
+}
+    #facebook {
+        line-height: 0;
+        padding-bottom: 1px;
+        height: 288px;
+        margin-left: 6px;
+        transform-origin: left top;
+        -ms-transform-origin: left top;
+        -moz-transform-origin: left top;
+        -webkit-transform-origin: left top;
+        background: url(http://img.alicdn.com/tps/TB1HKgPKXXXXXXuXXXXXXXXXXXX-34-34.gif) no-repeat center center;
+    }
+
+        #facebook span {
+            width: 38px;
+            display: inline-block;
+            border: 1px solid rgba(0, 0, 0, 0);
+            height: 38px;
+            margin-left: -1px;
+            margin-bottom: -1px;
+            overflow: hidden;
+            position: relative;
+            background-color: #FFF;
+            transition: all 0.3s;
+        }
+
+            #facebook span img {
+                height: 40px;
+                display: none;
+                width: auto;
+                max-width: none;
+                position: relative;
+                left: -10px;
+            }
+
+            #facebook span i {
+                position: absolute;
+                left: -100%;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                transform: skewx(-25deg);
+                -o-transform: skewx(-25deg);
+                -moz-transform: skewx(-25deg);
+                -webkit-transform: skewx(-25deg);
+                background-image: -webkit-linear-gradient(0deg,rgba(255,255,255,0),rgba(255,255,255,.5),rgba(255,255,255,0));
+                z-index: 10;
+            }
+
+            #facebook span:hover i {
+                left: 100%;
+                transition: .5s;
+                -o-transition: .5s;
+                -moz-transition: .5s;
+                -webkit-transition: .5s;
+            }
+
+    .facebook_on {
+        background-color: transparent;
+    }
+
+    .facebook_you::after {
+        content: "YOU";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #F40;
+        line-height: 38px;
+        font-size: 14px;
+        color: #FFF;
+        text-align: center;
+    }
+</style>
+<body>
+    <div class="main">
+        <header></header>
+        <main>
+            <div class="article-entry">
+                <p>
+                    <div id="facebook"></div>
+                   
+                </p>
+            </div>
+            <h4>仿淘宝前端团队</h4>
+        </main>
+        <footer></footer>
+    </div>
+    <script src="../js/jquery.min.js">
+
+    </script>
+
+    <script type="text/javascript">
+        ; (function () {
+
+            Array.prototype.indexOf = [].indexOf || function (item) {
+                for (var i = 0; i < this.length; i++) {
+                    if (item == this[i]) {
+                        return i;
+                    }
+                }
+                return -1;
+            };
+
+            var Facebook = function () {
+                this.pWidth = 720;
+                this.width = 708;
+                this.pHeight = 288;
+                this.dots = [20, 23, 38, 40,56, 74, 92, 57,  25, 26, 27, 43, 61,76, 79, 97,98, 99, 95, 46, 48, 66,76,82, 84,  31, 32, 103, 104, 51, 87, 64];
+                this.keys = [
+                  '1.jpg',
+                  '2.jpg',
+                  '3.jpg',
+                  '4.jpg',
+                  '5.jpg',
+                  '6.jpg',
+                  '7.jpg',
+                  '8.jpg',
+                  '9.jpg',
+                  '10.jpg',
+                  '11.png',
+                  '12.jpg',
+                  '13.jpg',
+                  '14.jpg',
+                  '15.jpg',
+                  '16.jpg',
+                  '17.jpg',
+                  '18.jpg',
+                  '19.jpg',
+                  '20.jpg',
+                  '21.jpg',
+                  '22.jpg',
+                  '23.jpg',
+                  '24.jpg',
+                  '25.jpg',
+                  '26.jpg',
+                  '27.jpg',
+                  '28.jpg',
+                  '29.jpg',
+                  '30.jpg',
+                  '31.jpg',
+                  '32.jpg',
+                  '33.jpg',
+                  '34.jpg',
+                  '35.jpg',
+                  '0.jpg'
+                 
+                ];
+                this.$box = $("#facebook");
+                this.init();
+            };
+
+            Facebook.prototype.getFaces = function () {
+                var len = this.dots.length, ret = [];
+                while (len--) {
+                    var rand = Math.floor(Math.random() * this.keys.length);
+                    ret.push("img/" + this.keys[rand]);
+                    this.keys.splice(rand, 1);
+                }
+                return ret;
+            }
+
+            Facebook.prototype.init = function () {
+                var self = this;
+                self.$box
+                  .css({
+                      width: self.width,
+                      background: "none"
+                  })
+                  .append(new Array(18 * 7 + 1).join("<span><img src><i></i></span>"));
+
+                this.bind();
+                this.run();
+
+            };
+
+            Facebook.prototype.bind = function () {
+                var self = this;
+
+                $(window).on("resize", function () {
+                    var rate = self.$box.parent().width() / self.pWidth;
+                    self.$box.css({
+                        "transform": "scale(" + rate + ")",
+                        "-ms-transform": "scale(" + rate + ")",
+                        "-moz-transform": "scale(" + rate + ")",
+                        "-webkit-transform": "scale(" + rate + ")",
+                        "margin-bottom": self.pHeight * (rate - 1)
+                    });
+                }).trigger("resize");
+
+                // GET `FED` Dot
+                // self.$box.find("span").on("click", function(){
+                //   var index = $(this).index();
+                //   $(this).toggleClass("facebook_on");
+                //   if(self.dots.indexOf(index) > -1) {
+                //     console.log('1');
+                //     self.dots.splice(self.dots.indexOf(index), 1);
+                //   } else {
+                //     self.dots.push(index);
+                //   }
+                // });
+            };
+
+            Facebook.prototype.run = function () {
+                var faces = this.getFaces();
+                var $spans = this.$box.find("span");
+                var resortDots = [];
+                var isMobile = /android|iphone/i.test(navigator.appVersion);
+                while (this.dots.length) {
+                    var rand = Math.floor(Math.random() * this.dots.length);
+                    resortDots.push(this.dots[rand]);
+                    this.dots.splice(rand, 1);
+                }
+                $.each(resortDots, function (index, item) {
+                    var img = faces[index];
+                    var $span = $($spans.get(item));
+                    setTimeout(function () {
+                        $span.css({ backgroundColor: "#ff5f3e" });
+                    }, index * 30);
+                    setTimeout(function () {
+                        $span
+                          .css({ backgroundColor: "#FFF" })
+                          .find("img")
+                          .attr("src", img )
+                          .fadeIn();
+                    }, (resortDots.length * 2 - index) * 30);
+                });
+
+                setTimeout(function () {
+                    var rand = Math.floor(Math.random() * resortDots.length);
+                    console.log(rand, $($spans[resortDots[rand]]));
+                    $($spans[resortDots[rand]]).addClass("facebook_you");
+                }, (resortDots.length * 2 + 1) * 30);
+            };
+
+            new Facebook();
+        })();
+
+
+    </script>
+
+  
+
+</body>
+
+</html>

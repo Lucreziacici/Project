@@ -10,7 +10,10 @@
 
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <style type="text/css">
-        body,html{overflow:hidden;}
+        body, html {
+            overflow: hidden;
+        }
+
         .footer {
             background-color: white;
             padding: 5px 0;
@@ -145,17 +148,18 @@
             padding: 5px 0 5px 5px;
             flex-shrink: 0;
         }
+
         .expression_img {
-        width:80px;
-        position:absolute;
-       
+            width: 80px;
+            position: absolute;
         }
+
         #qqchatlist {
-    position: absolute;
-    z-index: 111;
-    height: 580px;
-    width: 100%;
-    top: 0;
+            position: absolute;
+            z-index: 111;
+            height: 580px;
+            width: 100%;
+            top: 0;
         }
     </style>
 
@@ -209,8 +213,8 @@
                 </div>
 
             </div>
-            <div  id="qqchatlist" ondrop="drop(event)" ondragover="allowDrop(event)">
-</div>
+            <div id="qqchatlist" ondrop="drop(event)" ondragover="allowDrop(event)">
+            </div>
             <!-- 选择图片 -->
         </main>
         <footer>
@@ -252,31 +256,58 @@
     </div>
 
     <script src="../js/jquery.min.js"></script>
-
+    <script src="hammer.min.js"></script>
 
 
 
 
     <script type="text/javascript">
+        var getCss = function (o, key) {
+            return o.currentStyle ? o.currentStyle[key] : document.defaultView.getComputedStyle(o, false)[key];
+        };
+        function drag(element) {
+            console.log(element)
+            element.style.top = getCss(element, "top");
+            element.style.left = getCss(element, "left");
+            var hammer = new Hammer(element);//hammer实例
+            var x = 0;
+            var y = 0;
+            hammer.on('panstart', function (event) {
+                //console.log(event)
+                x = parseInt(element.style.left);
+                y = parseInt(element.style.top);
+            });
+            hammer.on('panmove', function (event) {
+               // console.log(event)
+                element.style.top = y + event.deltaY + "px";
+                element.style.left = x + event.deltaX + "px";
+            });
+            hammer.on('panend', function (event) {
+                console.log(event)
+            });
 
-        function allowDrop(ev) {
-            ev.preventDefault();
         }
+        var myElement = document.getElementById("dragImg0");
+        drag(myElement);
 
-        function drag(ev) {
-            console.log("drag" + ev);
-            ev.dataTransfer.effectAllowed = "copy";
-            ev.dataTransfer.setData("Text", ev.target.id);
-        }
+        //function allowDrop(ev) {
+        //    ev.preventDefault();
+        //}
 
-        function drop(ev) {
-            console.log(ev)
-            ev.preventDefault();
-            ev.dataTransfer.dropEffect = 'copy';
-            var data = ev.dataTransfer.getData("Text");
-            $("#" + data + "").css("top", ev.clientY).css("left", ev.clientX)
-            ev.target.appendChild(document.getElementById(data));
-        }
+        //function drag(ev) {
+        //    console.log("drag" + ev);
+        //    ev.dataTransfer.effectAllowed = "copy";
+        //    ev.dataTransfer.setData("Text", ev.target.id);
+        //}
+
+        //function drop(ev) {
+        //    console.log(ev)
+        //    ev.preventDefault();
+        //    ev.dataTransfer.dropEffect = 'copy';
+        //    var data = ev.dataTransfer.getData("Text");
+        //    $("#" + data + "").css("top", ev.clientY).css("left", ev.clientX)
+        //    ev.target.appendChild(document.getElementById(data));
+        //}
     </script>
 
 
