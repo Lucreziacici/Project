@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css shapes</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <style type="text/css">
+        body, html {
+            overflow: hidden;
+        }
+
+.container {
+    margin: 0 auto;
+    color: #333;
+    line-height: 2;
+    text-align: justify;
+}
+
+.-shape-outside {
+    shape-outside: circle(80px at 80px 80px);
+    float: left;
+}
+
+.circle {
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 50%;
+
+}
+.inset {
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+
+}
+.-shape-inset{
+shape-outside:inset(10px 10px 10px 10px);
+float: left;
+}
+    </style>
+
+
+</head>
+
+
+
+<body>
+
+    <div class="main">
+        <header></header>
+        <main>
+           <div class="container">
+    <div class="circle -shape-outside">
+      <img src="1.png">
+    </div>
+<p>
+  用到样式shape-outside: circle(80px at 80px 80px)，即在80px 80px处画圆，用于图文混排，可以发现文字排列是有一个弧线的
+</p>
+</div>
+           <div class="container">
+    <div class="inset -shape-inset">
+      <img src="1.png">
+    </div>
+<p>
+  用到样式shape-outside: inset(10px 10px 10px 10px);shape可以让浮动更少
+
+</p>
+</div>
+        </main>
+        <footer>
+            
+        </footer>
+    </div>
+
+    <script src="../js/jquery.min.js"></script>
+
+
+
+
+    <script type="text/javascript">
+      
+    </script>
+
+
+
+
+
+</body>
+
+</html>
