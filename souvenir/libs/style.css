@@ -1,0 +1,131 @@
+﻿@charset "utf-8";
+
+.page {
+  background: url(../img/background.png);
+  background-size: 100% 100%;
+  overflow: auto;
+}
+
+.page_logo {
+    display: flex;
+    justify-content: center;
+    padding: 12px 0 18px 0;
+}
+
+    .page_logo img {
+        width: 274px;
+        height: 120px;
+    }
+
+.page_swiper, .page_list {
+    height: 940px;
+}
+
+.page_check {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+    .page_check img {
+        width: 158px;
+        height: 58px;
+    }
+/*轮播显示*/
+.swiper-container {
+width:100%;
+
+}
+.swiper_box {
+    width: 510px;
+    height: 790px;
+    background: url(../img/swiper_bg.png);
+}
+.swiper_img {
+  height: 790px;
+  position: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.swiper_img img{
+ max-width: 394px;
+  height: 415px;
+
+}
+    .swiper_img .swiper_title {
+        z-index: 1;
+        background-color: rgba(238, 195, 96, 0.9);
+        padding: 10px 4px;
+        margin: 0;
+        border: 1px solid #b68869;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+        .swiper_img .swiper_title .line {
+        height:2px;
+        width:16px;
+        background-color:#871917;
+        }
+        .swiper_img .swiper_title p {
+            margin: 0 8px;
+            font-family: 楷体;
+            font-weight: bolder;
+            font-size: 32px;
+            -webkit-text-stroke: 2px #871915;
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: rgb(135, 25, 21);
+            color: white;
+        }
+    .swiper_img .logo {
+  width: 118px;
+  height: 118px;
+  z-index: 1;
+  border: 2px solid #b5974e;
+  border-radius: 10px;
+    }
+.swiperbg {
+  margin-top: -780px;
+  background-color: white;
+}
+.swiper_massage {
+  margin-top: -276px;
+  display: flex;
+  justify-content: center;
+}
+   
+    .swiper_massage p {
+  width: 354px;
+  color: #9a6141;
+  text-shadow: 0px 3px 1px rgba(0, 0, 0, 0.4);
+  -webkit-line-clamp: 2;
+  line-height: 34px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  display: box;
+  -webkit-box-orient: vertical;
+    }
+     .swiper_massage:before {
+    content:url(../img/before.png)
+    }
+      .swiper_massage:after {
+      content: url(../img/after.png);
+  bottom: 0;
+  margin-top: 80px;
+    }
+.swiper_linkin {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+.swiper_linkin img{
+    width:314px;
+    height:112px
+    ]}

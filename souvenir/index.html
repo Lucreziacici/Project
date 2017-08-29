@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html class="mobile">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta name="viewport" content="width=750,user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>首页</title>
+    <!--[if lt IE 9]><script>alert('您的浏览器版本过低，请更新本版本浏览器，或更换为诸如谷歌浏览器的现代浏览器')</script><![endif]-->
+    <link rel="stylesheet" href="libs/common.css">
+    <link rel="stylesheet" href="libs/style.css">
+    <link href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-size: 26px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body">
+        <!-- loading 页 -->
+        <div class="main-load" id="main-load">
+            <div class="load-img"><img src="img/loading.gif"></div>
+            <div class="load-text"><span id="load-text">0</span>% 加载中</div>
+        </div>
+        <!-- 音效 -->
+        <div class="other">
+            <audio src="media/bgm.mp3" id="bgm" preload autoplay loop></audio>
+        </div>
+        <!-- 首页 -->
+        <div class="page welcome" id="welcome">
+            <div class="page_logo"><img src="img/title.png"/></div>
+            <!--轮播-->
+            <div class="page_swiper">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="swiper_box">
+                                <div class="swiper_img">
+                                    <div class="swiper_title"><div class="line"></div><p>城隍庙商业街</p><div class="line"></div></div>
+                                    <img src="img/swiperimg.png">
+                                    <img class="logo" src="img/logo.png" />
+                                </div>
+                                <img src="img/swiper_top.png" class="swiperbg" >
+                                <div class="swiper_massage">
+                                    <p>吃吃吃吃，让你爱不释手，精品极致享受不一般的礼品</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper_box">
+                                <div class="swiper_img">
+                                    <div class="swiper_title"><div class="line"></div><p>城隍庙商业街</p><div class="line"></div></div>
+                                    <img src="img/swiperimg.png">
+                                    <img class="logo" src="img/logo.png" />
+                                </div>
+                                <img src="img/swiper_top.png" class="swiperbg">
+                                <div class="swiper_massage">
+                                    <p>吃吃吃吃，让你爱不释手，精品极致享受不一般的礼品</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper_box">
+                                <div class="swiper_img">
+                                    <div class="swiper_title"><div class="line"></div><p>城隍庙商业街</p><div class="line"></div></div>
+                                    <img src="img/swiperimg.png">
+                                    <img class="logo" src="img/logo.png" />
+                                </div>
+                                <img src="img/swiper_top.png" class="swiperbg">
+                                <div class="swiper_massage">
+                                    <p>吃吃吃吃，让你爱不释手，精品极致享受不一般的礼品</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper_linkin"><a href="#"><img src="img/linkin_swiper.png"></a></div>
+
+            </div>
+            <!-- 列表 -->
+            <div class="page_list" style="display:none"></div>
+            <div class="page_check"><img src="img/checklist.png"/></div>
+
+        </div>
+
+        <!-- 规则弹窗 -->
+        <div class="modal">
+            <div class="bg modal-bg"></div>
+            <div class="modal-box"></div>
+        </div>
+    </div>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <!--<script src="libs/common.js"></script>-->
+    <script src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.min.js"></script>
+    <script>
+        //$(window).on('touchmove', function (e) { e.preventDefault(); });
+
+        //var shareJson = {
+        //    title: '',
+        //    link: '',
+        //    imgUrl: '',
+        //    desc: '',
+        //}
+
+        //var $bgm = $('#bgm')[0];
+        //WxChat(shareJson, function () {
+        //    console.log($bgm.readyState)
+        //    $bgm && $bgm.play();
+        //});
+
+        //var imgs = ['img/loading.gif'];
+        //var $load_text = $('#load-text');
+        //preloadImage(imgs, function (per) {
+        //    $load_text.text(parseInt(per, 10));
+        //}, Start);
+
+        //function Start() {
+        //    $('#main-load').fadeOut('fast');
+        //    $('#welcome').fadeIn();
+        //}
+        $('#main-load').fadeOut('fast');
+           $('#welcome').fadeIn();
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'horizontal',
+            effect: 'coverflow',
+            centeredSlides: true,
+            loop: true,
+            loopAdditionalSlides: 1,
+            autoplayDisableOnInteraction: false,
+            slidesPerView: 1.4,
+            spaceBetween: 50,
+            centeredSlides: true,
+            coverflow: {
+                rotate: 0,
+                stretch: -60,
+                depth: 260,
+                modifier: 2,
+                slideShadows: true
+            }
+        })
+        // WxShare(wxshare);
+    </script>
+</body>
+</html>
