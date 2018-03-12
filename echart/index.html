@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据统计</title>
+    <link href="https://cdn.bootcss.com/Swiper/4.1.6/css/swiper.min.css" rel="stylesheet">
+    <style type="text/css">
+        html,body { width:100%; height:100%;} /*这行设置能实现单层满屏显示*/
+        .swiper-container { width: 100%; height: 100%;} /*这行设置能实现单层满屏显示*/
+        .page-style1 { background:url("./imgs/timg.jpg");
+            -webkit-background-size: 100% 100%;
+            background-size: 100% 100%;} /*p1层的背景色*/
+        .page-style2 { background:url("./imgs/5726f3e097c67_1024.jpg");
+            -webkit-background-size: 100% 100%;
+            background-size: 100% 100%;} /*p2层的背景色*/
+        .page-style3 {
+            background:url("./imgs/4a0f9cc50dc5f5b106ad560080a6db7b.jpg");
+            -webkit-background-size: 100% 100%;
+            background-size: 100% 100%;
+        } /*p3层的背景色*/
+        .swiper-slide{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+        .content{
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            align-items:center;
+
+        }
+        .content h1,h2,h3,h4,h5{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide page-style1" >
+            <div id="stocked_shop" style="width:45%;height:500px"></div>
+            <div id="stocked_shop2" style="width:45%;height:500px"></div>
+        </div>
+        <div class="swiper-slide page-style2">
+            <div id="stocked_shop3" style="width:45%;height:500px"></div>
+            <div id="stocked_shop4" style="width:45%;height:500px"></div>
+        </div>
+        <div class="swiper-slide page-style3">
+            <div style="width:45%;"></div>
+            <div class="content" style="width:45%;">
+                <h1>今日最佳</h1>
+                <h3>了不起的淼淼【含微店】</h3>
+                <h3>销量：118276.6</h3>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/Swiper/4.1.6/js/swiper.min.js"></script>
+<script src="https://cdn.bootcss.com/echarts/4.0.4/echarts.min.js"></script>
+<script src="./js/dark.js"></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: true,//可选选项，自动滑动
+        loop:true
+    })
+     var myChart_shop = echarts.init(document.getElementById('stocked_shop'),'dark');
+    var mychart_shop2=echarts.init(document.getElementById('stocked_shop2'),'dark');
+    var mychart_shop3=echarts.init(document.getElementById('stocked_shop3'),'dark');
+    var mychart_shop4=echarts.init(document.getElementById('stocked_shop4'),'dark');
+    // 指定图表的配置项和数据
+    var option = {
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        legend: {
+            data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎','百度','谷歌','必应','其他']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis : [
+            {
+                type : 'category',
+                data : ['周一','周二','周三','周四','周五','周六','周日']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'直接访问',
+                type:'bar',
+                data:[320, 332, 301, 334, 390, 330, 320]
+            },
+            {
+                name:'邮件营销',
+                type:'bar',
+                stack: '广告',
+                data:[120, 132, 101, 134, 90, 230, 210]
+            },
+            {
+                name:'联盟广告',
+                type:'bar',
+                stack: '广告',
+                data:[220, 182, 191, 234, 290, 330, 310]
+            },
+            {
+                name:'视频广告',
+                type:'bar',
+                stack: '广告',
+                data:[150, 232, 201, 154, 190, 330, 410]
+            },
+            {
+                name:'搜索引擎',
+                type:'bar',
+                data:[862, 1018, 964, 1026, 1679, 1600, 1570],
+                markLine : {
+                    lineStyle: {
+                        normal: {
+                            type: 'dashed'
+                        }
+                    },
+                    data : [
+                        [{type : 'min'}, {type : 'max'}]
+                    ]
+                }
+            },
+            {
+                name:'百度',
+                type:'bar',
+                barWidth : 5,
+                stack: '搜索引擎',
+                data:[620, 732, 701, 734, 1090, 1130, 1120]
+            },
+            {
+                name:'谷歌',
+                type:'bar',
+                stack: '搜索引擎',
+                data:[120, 132, 101, 134, 290, 230, 220]
+            },
+            {
+                name:'必应',
+                type:'bar',
+                stack: '搜索引擎',
+                data:[60, 72, 71, 74, 190, 130, 110]
+            },
+            {
+                name:'其他',
+                type:'bar',
+                stack: '搜索引擎',
+                data:[62, 82, 91, 84, 109, 110, 120]
+            }
+        ]
+    };
+    var option2 = {
+        title : {
+            text: '某地区蒸发量和降水量',
+            subtext: '纯属虚构'
+        },
+        tooltip : {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['蒸发量','降水量']
+        },
+        calculable : true,
+        xAxis : [
+            {
+                type : 'category',
+                data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value'
+            }
+        ],
+        series : [
+            {
+                name:'蒸发量',
+                type:'bar',
+                data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+                markPoint : {
+                    data : [
+                        {type : 'max', name: '最大值'},
+                        {type : 'min', name: '最小值'}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name: '平均值'}
+                    ]
+                }
+            },
+            {
+                name:'降水量',
+                type:'bar',
+                data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                markPoint : {
+                    data : [
+                        {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183},
+                        {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                    ]
+                },
+                markLine : {
+                    data : [
+                        {type : 'average', name : '平均值'}
+                    ]
+                }
+            }
+        ]
+    };
+    var option3 = {
+        legend: {},
+        tooltip: {},
+        dataset: {
+            source: [
+                ['product', '2015', '2016', '2017'],
+                ['Matcha Latte', 43.3, 85.8, 93.7],
+                ['Milk Tea', 83.1, 73.4, 55.1],
+                ['Cheese Cocoa', 86.4, 65.2, 82.5],
+                ['Walnut Brownie', 72.4, 53.9, 39.1]
+            ]
+        },
+        xAxis: {type: 'category'},
+        yAxis: {},
+        // Declare several bar series, each will be mapped
+        // to a column of dataset.source by default.
+        series: [
+            {type: 'bar'},
+            {type: 'bar'},
+            {type: 'bar'}
+        ]
+    };
+    setTimeout(function () {
+
+        option4 = {
+            legend: {},
+            tooltip: {
+                trigger: 'axis',
+                showContent: false
+            },
+            dataset: {
+                source: [
+                    ['product', '2012', '2013', '2014', '2015', '2016', '2017'],
+                    ['Matcha Latte', 41.1, 30.4, 65.1, 53.3, 83.8, 98.7],
+                    ['Milk Tea', 86.5, 92.1, 85.7, 83.1, 73.4, 55.1],
+                    ['Cheese Cocoa', 24.1, 67.2, 79.5, 86.4, 65.2, 82.5],
+                    ['Walnut Brownie', 55.2, 67.1, 69.2, 72.4, 53.9, 39.1]
+                ]
+            },
+            xAxis: {type: 'category'},
+            yAxis: {gridIndex: 0},
+            grid: {top: '55%'},
+            series: [
+                {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+                {
+                    type: 'pie',
+                    id: 'pie',
+                    radius: '30%',
+                    center: ['50%', '25%'],
+                    label: {
+                        formatter: '{b}: {@2012} ({d}%)'
+                    },
+                    encode: {
+                        itemName: 'product',
+                        value: '2012',
+                        tooltip: '2012'
+                    }
+                }
+            ]
+        };
+
+        mychart_shop4.on('updateAxisPointer', function (event) {
+            var xAxisInfo = event.axesInfo[0];
+            if (xAxisInfo) {
+                var dimension = xAxisInfo.value + 1;
+                myChart.setOption({
+                    series: {
+                        id: 'pie',
+                        label: {
+                            formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+                        },
+                        encode: {
+                            value: dimension,
+                            tooltip: dimension
+                        }
+                    }
+                });
+            }
+        });
+
+        mychart_shop4.setOption(option4);
+
+    });
+
+
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart_shop.setOption(option);
+    mychart_shop2.setOption(option2);
+    mychart_shop3.setOption(option3);
+</script>
+</body>
+</html>
