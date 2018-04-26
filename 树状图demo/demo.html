@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo</title>
+    <link href="http://www.jq22.com/jquery/bootstrap-3.3.4.css" rel="stylesheet">
+</head>
+<body>
+<div class="row "></div>
+<div id="treeview1" class="col-md-4"></div>
+
+<script src="http://www.jq22.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/bootstrap-treeview.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+
+        var defaultData = [
+            {
+                text: '缙嘉',
+                href: '#parent1',
+                tags: ['4'],
+                nodes: [
+                    {
+                        text: '行政人事部',
+                        href: '#child1',
+                        tags: ['2'],
+                        nodes: [
+                            {
+                                text: '甲乙丙',
+                                href: '#grandchild1',
+                                tags: ['0']
+                            },
+                            {
+                                text: '甲乙丙',
+                                href: '#grandchild2',
+                                tags: ['0']
+                            }
+                        ]
+                    },
+                    {
+                        text: '财务部',
+                        href: '#child2',
+                        tags: ['0']
+                    },
+                    {
+                        text: '采购部',
+                        href: '#child2',
+                        tags: ['0']
+                    },
+                    {
+                        text: '零售事业部',
+                        href: '#child2',
+                        tags: ['0'],
+                        nodes:[
+                            {
+                                text: '运营部',
+                                href: '#child2',
+                                tags: ['0'],
+                                nodes: [
+                                    {
+                                        text: '甲乙丙',
+                                        href: '#grandchild1',
+                                        tags: ['0']
+                                    },
+                                    {
+                                        text: '甲乙丙',
+                                        href: '#grandchild2',
+                                        tags: ['0']
+                                    },
+                                    {
+                                        text: '甲乙丙',
+                                        href: '#grandchild1',
+                                        tags: ['0']
+                                    },
+                                    {
+                                        text: '甲乙丙',
+                                        href: '#grandchild2',
+                                        tags: ['0']
+                                    }
+                                ]
+                            }, {
+                                text: '文案策划部',
+                                href: '#child2',
+                                tags: ['0']
+                            }, {
+                                text: '客服部',
+                                href: '#child2',
+                                tags: ['0']
+                            }, {
+                                text: '新媒体运营部',
+                                href: '#child2',
+                                tags: ['0']
+                            }, {
+                                text: '子蜜美妆店',
+                                href: '#child2',
+                                tags: ['0']
+                            }, {
+                                text: '默小宝美妆店',
+                                href: '#child2',
+                                tags: ['0']
+                            }, {
+                                text: '天猫',
+                                href: '#child2',
+                                tags: ['0']
+                            },
+                        ]
+                    },
+                    {
+                        text: '综合业务管理事业部',
+                        href: '#child2',
+                        tags: ['0']
+                    },
+                    {
+                        text: '自有品牌部',
+                        href: '#child2',
+                        tags: ['0']
+                    }
+                ]
+            }
+        ];
+        $('#treeview1').treeview({
+            data: defaultData,
+            onNodeSelected:function(event, data) {
+               alert('你点击查看的是'+data.text)
+            }
+        });})
+
+</script>
+
+</body>
+</html>
