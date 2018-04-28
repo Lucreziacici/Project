@@ -1,0 +1,240 @@
+﻿@charset "utf-8";
+$space0: 0;
+$space10: 10px;
+$space20: 20px;
+$space30: 30px;
+$l100: 100%;
+$l50: 50%;
+$l20: 20%;
+$fs30: 30px;
+$fs27: 27px;
+$fs40: 40px;
+$df: flex;
+$cc: center;
+$sa: space-around;
+$none: none;
+$bgc: peachpuff;
+$lst: none;
+$comcolor: #6441CC;
+$witcolor: #FFF;
+$listcolor: #333;
+$bluecolor: #1086f1;
+$redcolor: #f4666a;
+$topcolor: #161719;
+$pinkcolor: #C12566;
+$blackcolor: #161719;
+$fr: PingFangSC-Regular;
+$fm: PingFangSC-Medium;
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'PingFangSC-Medium';
+}
+
+@font-face {
+    font-family: 'PingFangSC-Regular';
+}
+
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1;
+    font-weight: normal;
+}
+
+img{
+    max-width: 100%;
+}
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
+.text {
+    word-wrap: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+body, input, textarea, select, button {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: "liga", "kern";
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: PingFangSC-Medium;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: #f7f7f7;
+    height: 100%;
+}
+
+
+
+table {
+    width: 100%;
+    empty-cells: show;
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: transparent;
+}
+
+.btn {
+    display: inline-block;
+    vertical-align: middle;
+    background: none;
+    color: inherit;
+    line-height: 1em;
+    border: 1px solid transparent;
+    text-decoration: none;
+    user-select: none;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.input {
+    display: block;
+    flex-grow: 1;
+    color: #555;
+    font: inherit;
+    line-height: 1;
+    background: none;
+    padding: .5em 1em;
+    border: 1px solid #ccc;
+    border-radius: .1em;
+}
+
+.nav, .list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.scroller {
+    overflow: auto;
+
+}
+
+img.bg, img.full,
+canvas.bg, canvas.full,
+iframe.bg, iframe.full {
+    width: 100%;
+    height: 100%;
+}
+
+.main-load,
+.body, .bg, .cover,
+.mobile .page,
+.imgRadio > img,
+.imgRadio > .img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.mobile .page {
+    //overflow: auto;
+
+}
+
+.main-load {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.body {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+    //overflow: hidden;
+    max-width: 750px;
+    //max-height:1334px;
+}
+
+.body > .header, .body > .footer {
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+
+.body > .main {
+    position: relative;
+    flex-grow: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    transform: translate3d(0, 0, 0);
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .body {
+        bottom: auto;
+        height: 200%;
+    }
+    /* 处理移动端表单输入问题 */
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-head,
+.panel-foot {
+    flex-shrink: 0;
+}
+
+.panel-body {
+    flex-grow: 1;
+}
+
+.imgRadio:before {
+    content: "";
+    padding-top: 100%;
+    display: block;
+}
+
+.imgRadio > .img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.imgRadio > img {
+    width: 100%;
+    height: 100%;
+}
+ul,li{list-style: none}
+p{
+    margin:0;
+}
+div,ul,li,p,span{
+    -webkit-overflow-scrolling: touch;
+}
+
+
+
