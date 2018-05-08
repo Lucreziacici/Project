@@ -35,7 +35,7 @@
     }
 
     .body{
-        padding: 0 100px;
+        /*padding: 0 100px;*/
     }
 
 .title{
@@ -49,25 +49,81 @@
     align-items: center;
 
 }
+.headimg{
+    border: 1px solid white;
+    border-radius: 100%;
+    padding: 5px;
+}
+.personinfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0 50px 0;
+    margin: 40px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+
+}
+.personinfo img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+.personinfo p:nth-child(2){
+    color: #fff;
+    font-size: 30px;
+    font-family: 楷体;
+}
+.personinfo p:nth-child(3){
+    color: #fff;
+    margin: 0;
+    font-size: 30px;
+    font-family: 楷体;
+}
+.phonebox{
+    padding: 0 40px;
+}
 .inputbox{
-    margin: 240px 0 0 0;
+    margin: 140px 30px 0 30px;
     border-bottom: 1px solid #fff;
     padding: 20px 12px;
-    background: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    /*background: rgba(255, 255, 255, 0.3);*/
 }
 .inputbox span{
     color: #fff;
     font-size: 30px;
 }
+.inputbox img{
+    width: 40px;
+
+}
 .inputbox input{
     border: 0;
-    outline:none;
+    outline: none;
     font-size: 30px;
     color: #fff;
     background: transparent;
+    text-align: center;
+    width: 550px;
+    font-family: 楷体;
+}
+.inputbox input::-webkit-input-placeholder{
+    color:#fff;
+}
+.inputbox input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color:#fff;
+}
+.inputbox input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color:#fff;
+}
+.inputbox input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+    color:#fff;
 }
 .buttonbox{
-    width: 540px;
+    width: 640px;
     height: 85px;
     border: 1px solid #ffffff;
     padding: 4px;
@@ -82,4 +138,5 @@
     height: 100%;
     border-radius: 100px;
     font-size: 30px;
+    font-family: 楷体;
 }
