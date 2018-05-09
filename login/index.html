@@ -18,33 +18,34 @@
         body {
             font-size: 26px;
         }
+        .buttonbox button {
+            position: relative;
+            font-size: 25px;
+            color: #fff;
+            padding: 20px;
+            overflow: hidden;
+            text-align: center;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
         .buttonbox button:after {
             content: "";
             background: #fff;
-            display: block;
             position: absolute;
-            width: 630px;
-            height: 75px;
-            margin-top: -56px;
-            border-radius: 50px;
+            width: 500px;
+            height: 500px;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
             opacity: 0;
-            transition: all 0.75s ease-in-out;
-        }
-        .buttonbox button.right:after {
-            content: "";
-            background: #fff;
-            display: block;
-            position: absolute;
-            width: 650px;
-            height: 75px;
-            top: -65px;
-            border-radius: 50px;
-            margin-right: -30%;
-            opacity: 0;
+            margin: auto;
+            border-radius: 50%;
+            transform: scale(1);
             transition: all 0.75s ease-in-out;
         }
         .buttonbox button:active:after {
-            width: 0px;
+            transform: scale(0);
             opacity: 1;
             transition: 0s;
         }
